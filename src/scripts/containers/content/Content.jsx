@@ -6,20 +6,17 @@ import { connect } from "react-redux";
 import * as FolderAction from "../../actions/Folders"; 
 
 
-const Content = ({foldersStore, dispatch}) => {
-    // handleDelete(id) 
-    // {
-    //     foldersStore.folders.filter(_folder => {              Где и как это писать??
-    //         _folder.id !== id
-    //         return {foldersStore }
-    //     })
-    // }
+const Content = ({foldersStore, dispatch}) => {   
+    
     return(
         <content className="content"> 
         {
             foldersStore.folders.map(_folder => {
                 return (
-                    <Folder key={_folder.id} folder={_folder} />
+                    <Folder 
+                    key={_folder.id} 
+                    folder={_folder} 
+                    onDelete={(id) => dispatch(FolderAction.removeFolder(id))}/>
                 )
             })
         }

@@ -3,7 +3,7 @@
 
  let initialState = {     
      folders: [],
-     id: [],           //     как добавить id
+     id: [],           
      isOpenTemplate: false
  }
 
@@ -16,8 +16,8 @@
      state.folders.push(payload);
      return { ...state, isOpenTemplate: false }
  }
- const removeFolder = (state) => {
-	// state.folders.filter(folder => id !== id);         как это записать?
+ const removeFolder = (state, payload) => {
+	state.folders = state.folders.filter(itm => itm.id !== payload.id); 
 	return{...state}
 }
 
@@ -29,7 +29,7 @@
         case FOLDERS.SAVE_FOLDER:
             return saveFolder(state, action.payload);
             case FOLDERS.REMOVE_FOLDER:
-            return removeFolder(state);
+            return removeFolder(state, action.payload);
         default: return state;
      }
  }

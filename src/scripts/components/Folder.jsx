@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
-const Folder = ({folder}) => {
+ 
+const Folder = ({folder, onDelete}) => {
+   
     return(
         <div className="folder">
             <div className="folder-header">
@@ -12,9 +13,7 @@ const Folder = ({folder}) => {
             <div className="folder-controls">
                 folder
             </div>
-            <button className="del">DELETE</button>  
-            {/* <button className="del" onDelete={?..handleDelete..?}>DELETE</button>     Где описать ..handleDelete..?*/           }
-            
+            <button className="del" onClick={() => onDelete(folder.id)}>DELETE</button>             
             
         </div>
     )
@@ -24,5 +23,6 @@ export default Folder;
 
 Folder.propTypes = {
     folder: PropTypes.object,
-    className: PropTypes.string 
+    className: PropTypes.string,
+    onDelete: PropTypes.func 
 }

@@ -12,9 +12,9 @@ export const saveFolder = (payload) => {
         payload
     }
 }
-export const removeFolder = (payload) => {
+export const removeFolder = (id) => {
     return {
         type: FOLDERS.REMOVE_FOLDER,
-        payload
+        payload: {id}
     }
 }
