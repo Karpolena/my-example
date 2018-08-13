@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+$roboto: 'Roboto', sans-serif;
+$arial: 'Arial', sans-serif;
+
+$light: #f5f5f5;
+$light-grey: #eee;
+$grey: #555;
+
+
+* {
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
+body {
+    font: 0.9em $roboto;
+    color: $grey;    
+}
+button {
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+}
+.header {
+    height: 80px;
+}
+
+.wrap-content {
+    display: flex;
+}
+.main-menu {
+    width: 20%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.content {
+    width: 80%;
+}
+.folder {
+    width: 300px;
+    height: 200px; 
+    float: left;       
+    border: 1px solid $grey;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &-header {
+        padding: 20px;
+        & input { 
+            width: 280px;          
+            height: 40px;
+        }
+    }
+}
+
+
+
