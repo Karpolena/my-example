@@ -8,7 +8,6 @@ const Folder = ({folder, onDelete}) => {
     return(
         <div className="folder">
             <div className="folder-header">
-                <Link to="/">Content </Link>
                 <Link to={`/folder/${folder.id}`}>{folder.title}</Link>
             </div>
             

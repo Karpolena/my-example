@@ -12,6 +12,9 @@ margin: 0px;
 padding: 0px;
 box-sizing: border-box;
 }
+html, body, #root, .main {
+    height: 100%;
+}
 body {
     font: 0.9em $roboto;
     color: $grey;    
@@ -23,19 +26,23 @@ button {
 }
 .header {
     height: 80px;
+    border-bottom: 1px solid #d9d9d9;
 }
 
 .wrap-content {
     display: flex;
+    height: calc(100% - 80px);
 }
 .main-menu {
-    width: 20%;
+    width: 200px;
     padding: 20px;
     display: flex;
     justify-content: center;
+    border-right: 1px solid #d9d9d9;
 }
 .content {
-    width: 80%;
+    width: calc(100% - 200px);
+    padding: 20px;
 }
 .folder {
     width: 300px;
