@@ -1,13 +1,19 @@
 import React from "react";
-import Folder from "../../components/Folder";
-import Template from "../../components/Template";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { Switch, Route } from "react-router-dom";
+
+
+import Folder from "../../components/Folder";
+import Template from "../../components/Template";
 import * as FolderAction from "../../actions/Folders"; 
 
 
 const Content = ({foldersStore, dispatch}) => {   
-    
+    <Switch>
+        <Route exact path="/" component={Content}/>
+        <Route path="/folder/:id" component={Folder}/>                                   
+    </Switch>
     return(
         <content className="content"> 
         {
@@ -16,7 +22,8 @@ const Content = ({foldersStore, dispatch}) => {
                     <Folder 
                     key={_folder.id} 
                     folder={_folder} 
-                    onDelete={(id) => dispatch(FolderAction.removeFolder(id))}/>
+                    onDelete={(id) => dispatch(FolderAction.removeFolder(id))}
+                    />
                 )
             })
         }
@@ -29,8 +36,8 @@ const Content = ({foldersStore, dispatch}) => {
                 }))
             }}/> : null
         }
-             
-           
+        
+         
         </content>
     )
 }

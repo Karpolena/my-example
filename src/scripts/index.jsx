@@ -5,9 +5,12 @@ import App from "./App";
 import "./../scss/main.scss";
 import { Provider } from "react-redux";
 import store from "./store/index";
+import { HashRouter } from "react-router-dom";
 
 render (
-    <Provider store={store}>
-        <App />    
-    </Provider>, document.getElementById("root")
+    <HashRouter>
+        <Provider store={store}>
+            <App />    
+        </Provider>
+    </HashRouter>, document.getElementById("root")
 )

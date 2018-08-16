@@ -2,29 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+
  
-const Folder = ({folder, onDelete}) => {
+const FolderInner = ({folder}) => {
    
     return(
         <div className="folder">
             <div className="folder-header">
                 <Link to="/">Content </Link>
-                <Link to={`/folder/${folder.id}`}>{folder.title}</Link>
+                {/* <Link to={`/folder/${folder.id}`}>{folder.title}</Link> */}
             </div>
             
             <div className="folder-controls">
-                folder
+            {folder.title}
             </div>
-            <button className="del" onClick={() => onDelete(folder.id)}>DELETE</button>             
+                         
             
         </div>
     )
 }
 
-export default Folder;
+export default FolderInner;
 
 Folder.propTypes = {
     folder: PropTypes.object,
-    className: PropTypes.string,
-    onDelete: PropTypes.func 
+    className: PropTypes.string
 }
