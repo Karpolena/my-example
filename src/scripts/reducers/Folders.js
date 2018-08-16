@@ -21,7 +21,6 @@
 	return{...state}
 }
 
-
  const FoldersReducer = (state = initialState, action) => {
      switch (action.type) {
          case FOLDERS.OPEN_TEMPLATE:
